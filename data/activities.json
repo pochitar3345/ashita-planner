@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "_readme": "予定の素材データ。interests の patterns に1行追加するだけで候補が増えます。min=所要時間(分)、times=向いている時間帯(morning 〜11時 / noon 11〜14時 / afternoon 14〜17時 / evening 17〜19時半 / night 19時半〜)、energy=必要な体力(low/mid/high)、cost=費用の目安(円)、place=indoor(室内)/outdoor(屋外)、meal=食事の代わりになる場合(breakfast/lunch/dinner)。",
+  "interests": [
+    {
+      "id": "exercise",
+      "label": "運動・ジム",
+      "emoji": "🏃",
+      "patterns": [
+        { "id": "ex01", "title": "30分ウォーキング＋ストレッチ", "min": 40, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 0, "place": "outdoor" },
+        { "id": "ex02", "title": "ジムで筋トレ＋有酸素運動", "min": 75, "times": ["morning", "afternoon", "evening", "night"], "energy": "high", "cost": 800, "place": "indoor" },
+        { "id": "ex03", "title": "動画を見ながら家で20分筋トレ", "min": 25, "times": ["morning", "evening", "night"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "ex04", "title": "動画で15分の朝ヨガ", "min": 20, "times": ["morning"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ex05", "title": "ジョギング3km＋クールダウン", "min": 40, "times": ["morning", "evening"], "energy": "high", "cost": 0, "place": "outdoor" },
+        { "id": "ex06", "title": "ゆるストレッチ15分で体をほぐす", "min": 20, "times": ["evening", "night", "afternoon"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ex07", "title": "自転車で近所をぐるっと一周", "min": 60, "times": ["morning", "afternoon"], "energy": "mid", "cost": 0, "place": "outdoor" },
+        { "id": "ex08", "title": "市民プールでのんびり泳ぐ", "min": 90, "times": ["afternoon", "evening"], "energy": "high", "cost": 500, "place": "indoor" },
+        { "id": "ex09", "title": "ラジオ体操＋スクワット10回", "min": 15, "times": ["morning"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ex10", "title": "公園で縄跳びと体幹トレーニング", "min": 30, "times": ["morning", "afternoon", "evening"], "energy": "high", "cost": 0, "place": "outdoor" },
+        { "id": "ex11", "title": "ボルダリングジムで体験", "min": 120, "times": ["afternoon", "evening"], "energy": "high", "cost": 2500, "place": "indoor" },
+        { "id": "ex12", "title": "プランクと腹筋で体幹を20分", "min": 20, "times": ["morning", "evening", "night"], "energy": "mid", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "study",
+      "label": "勉強・自己学習",
+      "emoji": "📚",
+      "patterns": [
+        { "id": "st01", "title": "英単語アプリで20分", "min": 20, "times": ["morning", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st02", "title": "資格の問題集を1章すすめる", "min": 60, "times": ["morning", "afternoon", "night"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "st03", "title": "カフェで集中して勉強", "min": 90, "times": ["noon", "afternoon"], "energy": "mid", "cost": 600, "place": "indoor" },
+        { "id": "st04", "title": "図書館で読書・調べもの", "min": 120, "times": ["morning", "noon", "afternoon"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "st05", "title": "オンライン講座の動画を1本見る", "min": 45, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st06", "title": "今日学んだことをノート1ページにまとめる", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st07", "title": "気になっていた本を30分読む（朝活）", "min": 30, "times": ["morning"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st08", "title": "苦手分野の復習（25分×2セット）", "min": 55, "times": ["morning", "afternoon", "night"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "st09", "title": "英語のポッドキャストでリスニング", "min": 30, "times": ["morning", "afternoon", "evening"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st10", "title": "プログラミングの練習問題を解く", "min": 60, "times": ["morning", "afternoon", "night"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "st11", "title": "ニュース解説を読んで一言メモ", "min": 20, "times": ["morning", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "st12", "title": "過去問1回分を時間を計って解く", "min": 90, "times": ["morning", "afternoon"], "energy": "high", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "shopping",
+      "label": "買い物",
+      "emoji": "🛍️",
+      "patterns": [
+        { "id": "sh01", "title": "スーパーで食材をまとめ買い", "min": 45, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 3000, "place": "indoor" },
+        { "id": "sh02", "title": "ドラッグストアで日用品を補充", "min": 30, "times": ["afternoon", "evening"], "energy": "low", "cost": 1500, "place": "indoor" },
+        { "id": "sh03", "title": "駅ビルでウィンドウショッピング", "min": 90, "times": ["noon", "afternoon"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "sh04", "title": "100円ショップで便利グッズ探し", "min": 40, "times": ["morning", "afternoon"], "energy": "low", "cost": 500, "place": "indoor" },
+        { "id": "sh05", "title": "本屋さんで気になる本を探す", "min": 45, "times": ["noon", "afternoon", "evening"], "energy": "low", "cost": 1500, "place": "indoor" },
+        { "id": "sh06", "title": "古着屋・リサイクルショップめぐり", "min": 90, "times": ["noon", "afternoon"], "energy": "mid", "cost": 2000, "place": "outdoor" },
+        { "id": "sh07", "title": "季節の服を1着えらびに行く", "min": 90, "times": ["noon", "afternoon"], "energy": "mid", "cost": 5000, "place": "indoor" },
+        { "id": "sh08", "title": "買う物リストを整理してネット注文", "min": 30, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sh09", "title": "商店街を歩いて掘り出し物探し", "min": 60, "times": ["morning", "afternoon"], "energy": "mid", "cost": 1000, "place": "outdoor" },
+        { "id": "sh10", "title": "ホームセンターで暮らしの道具を見る", "min": 60, "times": ["morning", "afternoon"], "energy": "mid", "cost": 1000, "place": "indoor" },
+        { "id": "sh11", "title": "朝市・マルシェで新鮮な野菜を買う", "min": 60, "times": ["morning"], "energy": "mid", "cost": 1500, "place": "outdoor" },
+        { "id": "sh12", "title": "家電量販店で気になる家電をチェック", "min": 60, "times": ["afternoon", "evening"], "energy": "low", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "chores",
+      "label": "家事・掃除",
+      "emoji": "🧹",
+      "patterns": [
+        { "id": "ch01", "title": "洗濯して干す", "min": 40, "times": ["morning"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ch02", "title": "キッチンまわりをピカピカに", "min": 30, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "ch03", "title": "お風呂とトイレをまとめて掃除", "min": 40, "times": ["morning", "afternoon", "night"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "ch04", "title": "部屋に掃除機をかける", "min": 20, "times": ["morning", "afternoon"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ch05", "title": "いらない物を1袋分だけ処分", "min": 30, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "ch06", "title": "作り置きおかずを3品つくる", "min": 90, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 1500, "place": "indoor" },
+        { "id": "ch07", "title": "シーツと布団カバーを洗う", "min": 30, "times": ["morning"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ch08", "title": "クローゼットを整理して衣替え", "min": 60, "times": ["morning", "afternoon"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "ch09", "title": "冷蔵庫の中を整理して拭き掃除", "min": 30, "times": ["morning", "afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ch10", "title": "窓ふきとベランダ掃除", "min": 45, "times": ["morning", "afternoon"], "energy": "high", "cost": 0, "place": "outdoor" },
+        { "id": "ch11", "title": "タイマー15分だけ片づけ", "min": 15, "times": ["morning", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ch12", "title": "書類・郵便物をまとめて整理", "min": 30, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "relax",
+      "label": "のんびり休む",
+      "emoji": "☕",
+      "patterns": [
+        { "id": "rx01", "title": "好きな飲み物でゆっくりお茶タイム", "min": 30, "times": ["morning", "afternoon", "evening"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx02", "title": "20分だけ昼寝してスッキリ", "min": 25, "times": ["noon", "afternoon"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx03", "title": "映画かドラマを1本ゆっくり見る", "min": 120, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx04", "title": "近所の公園で日なたぼっこ", "min": 40, "times": ["morning", "noon", "afternoon"], "energy": "low", "cost": 0, "place": "outdoor" },
+        { "id": "rx05", "title": "好きな音楽を聴きながらゴロゴロ", "min": 30, "times": ["morning", "noon", "afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx06", "title": "入浴剤を入れてゆっくり長風呂", "min": 40, "times": ["evening", "night"], "energy": "low", "cost": 200, "place": "indoor" },
+        { "id": "rx07", "title": "漫画や小説を気ままに読む", "min": 60, "times": ["morning", "afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx08", "title": "スーパー銭湯でのんびり", "min": 120, "times": ["afternoon", "evening"], "energy": "low", "cost": 1000, "place": "indoor" },
+        { "id": "rx09", "title": "ストレッチと深呼吸で体をリセット", "min": 15, "times": ["morning", "noon", "afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx10", "title": "カフェで窓の外をぼんやり眺める", "min": 45, "times": ["noon", "afternoon"], "energy": "low", "cost": 600, "place": "indoor" },
+        { "id": "rx11", "title": "好きな香りの中で目を閉じて休む", "min": 20, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "rx12", "title": "何もしないで横になる時間", "min": 30, "times": ["afternoon", "evening"], "energy": "low", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "outing",
+      "label": "おでかけ",
+      "emoji": "🗺️",
+      "patterns": [
+        { "id": "ou01", "title": "近くの大きな公園をのんびり散歩", "min": 90, "times": ["morning", "noon", "afternoon"], "energy": "low", "cost": 0, "place": "outdoor" },
+        { "id": "ou02", "title": "行ったことのない街を歩いてみる", "min": 180, "times": ["noon", "afternoon"], "energy": "mid", "cost": 1000, "place": "outdoor" },
+        { "id": "ou03", "title": "美術館・博物館をじっくり見る", "min": 150, "times": ["noon", "afternoon"], "energy": "mid", "cost": 1500, "place": "indoor" },
+        { "id": "ou04", "title": "映画館で話題の映画を見る", "min": 150, "times": ["noon", "afternoon", "evening"], "energy": "low", "cost": 2000, "place": "indoor" },
+        { "id": "ou05", "title": "水族館か動物園へ行く", "min": 210, "times": ["morning", "noon", "afternoon"], "energy": "mid", "cost": 2500, "place": "outdoor" },
+        { "id": "ou06", "title": "図書館に寄って、近くのカフェでひと休み", "min": 150, "times": ["noon", "afternoon"], "energy": "low", "cost": 700, "place": "indoor" },
+        { "id": "ou07", "title": "レンタサイクルで川沿いをサイクリング", "min": 150, "times": ["morning", "afternoon"], "energy": "high", "cost": 1000, "place": "outdoor" },
+        { "id": "ou08", "title": "神社やお寺をめぐって御朱印集め", "min": 120, "times": ["morning", "noon", "afternoon"], "energy": "mid", "cost": 1000, "place": "outdoor" },
+        { "id": "ou09", "title": "ショッピングモールを見て回る", "min": 150, "times": ["noon", "afternoon"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ou10", "title": "日帰り温泉でまったり", "min": 240, "times": ["noon", "afternoon"], "energy": "low", "cost": 4000, "place": "indoor" },
+        { "id": "ou11", "title": "展望台から街を見下ろす", "min": 120, "times": ["afternoon", "evening"], "energy": "low", "cost": 1500, "place": "indoor" },
+        { "id": "ou12", "title": "植物園で季節の花を見る", "min": 150, "times": ["morning", "noon", "afternoon"], "energy": "low", "cost": 500, "place": "outdoor" },
+        { "id": "ou13", "title": "無料の展示やイベントをのぞく", "min": 120, "times": ["noon", "afternoon"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "ou14", "title": "夜景のきれいな場所を散歩", "min": 90, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "outdoor" }
+      ]
+    },
+    {
+      "id": "social",
+      "label": "友達・家族と過ごす",
+      "emoji": "🤝",
+      "patterns": [
+        { "id": "so01", "title": "家族と夕ごはん（会話たっぷり）", "min": 60, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "indoor", "meal": ["dinner"] },
+        { "id": "so02", "title": "友達とカフェでおしゃべり", "min": 90, "times": ["noon", "afternoon"], "energy": "low", "cost": 800, "place": "indoor" },
+        { "id": "so03", "title": "久しぶりの友達とビデオ通話", "min": 30, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "so04", "title": "家族と近所を散歩", "min": 45, "times": ["morning", "afternoon", "evening"], "energy": "low", "cost": 0, "place": "outdoor" },
+        { "id": "so05", "title": "友達とランチ", "min": 90, "times": ["noon"], "energy": "low", "cost": 1500, "place": "indoor", "meal": ["lunch"] },
+        { "id": "so06", "title": "みんなでボードゲームやトランプ", "min": 90, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "so07", "title": "家族と一緒に夕ごはんをつくる", "min": 75, "times": ["evening"], "energy": "mid", "cost": 1000, "place": "indoor", "meal": ["dinner"] },
+        { "id": "so08", "title": "実家や祖父母に電話する", "min": 20, "times": ["morning", "afternoon", "evening"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "so09", "title": "友達とカラオケ", "min": 120, "times": ["afternoon", "evening"], "energy": "mid", "cost": 1500, "place": "indoor" },
+        { "id": "so10", "title": "家で一緒に映画を見る", "min": 120, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "so11", "title": "友達と公園でバドミントン", "min": 60, "times": ["morning", "afternoon"], "energy": "high", "cost": 0, "place": "outdoor" },
+        { "id": "so12", "title": "家族や友達にメッセージを送る", "min": 20, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "hobby",
+      "label": "趣味の時間",
+      "emoji": "🎨",
+      "patterns": [
+        { "id": "hb01", "title": "音楽を聴きながら絵を描く", "min": 60, "times": ["morning", "afternoon", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb02", "title": "楽器の練習をする", "min": 45, "times": ["morning", "afternoon", "evening"], "energy": "mid", "cost": 0, "place": "indoor" },
+        { "id": "hb03", "title": "カメラを持って写真散歩", "min": 60, "times": ["morning", "afternoon"], "energy": "mid", "cost": 0, "place": "outdoor" },
+        { "id": "hb04", "title": "ゲームをじっくり楽しむ", "min": 90, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb05", "title": "手芸やプラモデルで手を動かす", "min": 90, "times": ["afternoon", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb06", "title": "植物の手入れ・ベランダ菜園", "min": 30, "times": ["morning", "afternoon"], "energy": "low", "cost": 0, "place": "outdoor" },
+        { "id": "hb07", "title": "新しいお菓子づくりに挑戦", "min": 90, "times": ["afternoon"], "energy": "mid", "cost": 1000, "place": "indoor" },
+        { "id": "hb08", "title": "日記やブログを書く", "min": 30, "times": ["morning", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb09", "title": "推しの動画や配信をゆっくり見る", "min": 60, "times": ["afternoon", "evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb10", "title": "パズルやクロスワードを解く", "min": 30, "times": ["morning", "afternoon", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb11", "title": "気になる趣味の入門動画を見てみる", "min": 30, "times": ["evening", "night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "hb12", "title": "好きな本を持ってカフェで読書", "min": 60, "times": ["noon", "afternoon"], "energy": "low", "cost": 600, "place": "indoor" }
+      ]
+    },
+    {
+      "id": "gourmet",
+      "label": "美味しいものを食べる",
+      "emoji": "🍽️",
+      "patterns": [
+        { "id": "gm01", "title": "気になっていたラーメン店でランチ", "min": 60, "times": ["noon"], "energy": "low", "cost": 1000, "place": "indoor", "meal": ["lunch"] },
+        { "id": "gm02", "title": "人気のパン屋さんで朝ごはん", "min": 45, "times": ["morning"], "energy": "low", "cost": 800, "place": "indoor", "meal": ["breakfast"] },
+        { "id": "gm03", "title": "カフェで季節限定のスイーツ", "min": 60, "times": ["afternoon"], "energy": "low", "cost": 1200, "place": "indoor" },
+        { "id": "gm04", "title": "定食屋さんでしっかり夕ごはん", "min": 60, "times": ["evening", "night"], "energy": "low", "cost": 1200, "place": "indoor", "meal": ["dinner"] },
+        { "id": "gm05", "title": "ちょっといい食材で家ごはん", "min": 90, "times": ["evening"], "energy": "mid", "cost": 2000, "place": "indoor", "meal": ["dinner"] },
+        { "id": "gm06", "title": "回転寿司で好きなネタを好きなだけ", "min": 60, "times": ["noon", "evening"], "energy": "low", "cost": 2000, "place": "indoor", "meal": ["lunch", "dinner"] },
+        { "id": "gm07", "title": "焼肉で元気をチャージ", "min": 90, "times": ["evening", "night"], "energy": "mid", "cost": 4000, "place": "indoor", "meal": ["dinner"] },
+        { "id": "gm08", "title": "コンビニの新作スイーツを食べ比べ", "min": 20, "times": ["afternoon", "night"], "energy": "low", "cost": 500, "place": "indoor" },
+        { "id": "gm09", "title": "おにぎりを持って公園でピクニック", "min": 75, "times": ["noon"], "energy": "low", "cost": 300, "place": "outdoor", "meal": ["lunch"] },
+        { "id": "gm10", "title": "少しリッチなホテルランチ", "min": 90, "times": ["noon"], "energy": "low", "cost": 4500, "place": "indoor", "meal": ["lunch"] },
+        { "id": "gm11", "title": "商店街で食べ歩き", "min": 90, "times": ["noon", "afternoon"], "energy": "mid", "cost": 1500, "place": "outdoor" },
+        { "id": "gm12", "title": "家でホットケーキを焼いておやつ", "min": 45, "times": ["afternoon"], "energy": "low", "cost": 300, "place": "indoor" },
+        { "id": "gm13", "title": "ビストロや居酒屋でゆっくり晩ごはん", "min": 120, "times": ["evening", "night"], "energy": "low", "cost": 3500, "place": "indoor", "meal": ["dinner"] },
+        { "id": "gm14", "title": "家にある材料でアレンジごはん", "min": 45, "times": ["noon", "evening"], "energy": "low", "cost": 0, "place": "indoor", "meal": ["lunch", "dinner"] }
+      ]
+    },
+    {
+      "id": "sleep",
+      "label": "早く寝る",
+      "emoji": "🌙",
+      "_note": "「早く寝る」は寝る前のリラックス時間（寝る準備）として入ります",
+      "patterns": [
+        { "id": "sl01", "title": "スマホを置いて、照明を暗くしてストレッチ", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl02", "title": "白湯かホットミルクを飲んでひと息", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl03", "title": "紙の本を読んで眠くなるのを待つ", "min": 40, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl04", "title": "明日の服と持ち物を準備して布団へ", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl05", "title": "3行日記で今日をふり返る", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl06", "title": "4秒吸って8秒はく深呼吸を5分", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl07", "title": "眠りのための音楽をかけて横になる", "min": 40, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl08", "title": "蒸しタオルで目と首をあたためる", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl09", "title": "寝室の温度と明かりを整える", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl10", "title": "好きな香りでリラックスする", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" },
+        { "id": "sl11", "title": "瞑想アプリで10分マインドフルネス", "min": 30, "times": ["night"], "energy": "low", "cost": 0, "place": "indoor" }
+      ]
+    }
+  ],
+  "routines": {
+    "wakeup": ["カーテンを開けて朝日を浴びる", "コップ1杯の水を飲んで体を起こす", "窓を開けて深呼吸を3回", "伸びをして、今日の予定をざっと確認"],
+    "breakfast": ["トーストとヨーグルトで手早く", "おにぎりと味噌汁でほっとする朝", "バナナとコーヒーで軽めに", "卵かけごはんと納豆", "シリアルと牛乳", "前の晩の残りものをあたためて"],
+    "brunch": ["ゆっくりブランチ：ホットサンドとスープ", "ブランチ：パンケーキと果物", "ブランチ：オムライス", "ブランチ：卵とベーコンのワンプレート"],
+    "lunch": ["家でパスタをつくる", "冷凍うどんで手軽に", "近くのお店で日替わり定食", "サンドイッチとスープ", "チャーハンと卵スープ", "お弁当を買ってのんびり"],
+    "dinner": ["野菜たっぷりの鍋", "生姜焼きとごはん", "カレーライス", "焼き魚と味噌汁", "具だくさんスープとパン", "親子丼でほっこり"],
+    "getready": ["持ち物チェック：鍵・スマホ・財布", "天気を見て上着を決める", "歯みがきと身だしなみを整える", "出る5分前に戸じまり確認"],
+    "work": ["お昼休みは外の空気を吸ってリフレッシュ", "昼ごはんのあとに5分だけ目を閉じる", "午後は大事な作業から片づける", "1時間に1回、席を立って伸びをする"],
+    "school": ["お昼は友達とゆっくり食べる", "休み時間に水分補給", "授業のメモを帰る前に見直す", "放課後の予定を確認しておく"],
+    "plan": ["時間に余裕をもって出発", "必要な物を前の晩にまとめておく", "移動中に好きな音楽を聴く", "終わったら少し休憩してから次へ"],
+    "bath": ["38〜40℃の湯船に15分つかる", "シャワーのあとに足湯で体をあたためる", "入浴剤でちょっとぜいたくに", "お風呂でゆっくり肩をほぐす"],
+    "bedprep": ["歯みがき・スキンケア・明日の服の準備", "スマホを置いて目覚ましをセット", "部屋を暗くして軽くストレッチ", "明日の持ち物をまとめて玄関へ"],
+    "rest": ["ソファで目を閉じて10分休む", "温かいお茶でひと息", "首と肩をゆっくり回す", "横になって深呼吸"],
+    "free": ["好きなことをして自由に過ごす", "少しゴロゴロして体を休める", "気になっていた動画を見る", "部屋を少し片づけながら音楽を聴く", "窓を開けて空気を入れかえ、のんびり"],
+    "homecoming": ["手洗い・うがいをして部屋着に着がえる", "帰ったらまず一杯の水", "荷物を片づけてひと息", "お弁当箱やカバンの中身を片づける"]
+  }
+}
