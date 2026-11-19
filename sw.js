@@ -1,6 +1,6 @@
 /* オフラインでも開けるように、アプリ本体をキャッシュする */
-const CACHE = 'ashita-planner-v2';
-const ASSETS = ['./', 'index.html', 'style.css', 'planner.js', 'app.js', 'data/activities.json', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-180.png', 'icons/icon-512.png'];
+const CACHE = 'ashita-planner-v3';
+const ASSETS = ['./', 'index.html', 'style.css', 'flow.js', 'planner.js', 'app.js', 'data/activities.json', 'data/questions.json', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-180.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
