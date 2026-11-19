@@ -118,7 +118,8 @@ npx playwright install chromium   # 入れていない場合は、PCの Microsof
 npm test
 ```
 
-スマホサイズ（390×844）で次を確認しています。結果は `screenshots/test-results.json`。最終実行は **29/29 件OK**。
+スマホサイズ（390×844）で次を確認しています。結果は `screenshots/test-results.json`。最終実行は **29/29 件OK**（ローカルと公開URLの両方。スクリーンショットは公開URLでの実行時のもの）。
+公開URLでは、一度開いたあと**オフラインにしても**質問から結果まで動くことも確認しました。
 
 | # | 内容 | 結果 |
 |---|---|---|
