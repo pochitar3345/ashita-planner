@@ -1,0 +1,314 @@
+{
+  "version": 2,
+  "_readme": "質問と分岐の定義。上から順に出ます。showIf を満たす質問だけが出ます（条件は自分より前の質問だけを参照できます）。条件の書き方: {\"q\":\"質問id\",\"eq\":値} / {\"q\":..,\"in\":[..]} / {\"q\":..,\"includes\":値}（複数選択に含まれる）/ {\"q\":..,\"gt\":数} / {\"q\":..,\"lt\":数} / {\"any\":[条件..]} / {\"all\":[条件..]} / {\"not\":条件}。base=true は基本の質問。",
+  "questions": [
+    {
+      "id": "day", "base": true, "type": "single",
+      "title": "明日はどんな日？",
+      "options": [
+        { "v": "work", "label": "仕事の日", "em": "💼" },
+        { "v": "school", "label": "学校の日", "em": "🏫" },
+        { "v": "off", "label": "休みの日", "em": "🌿" },
+        { "v": "half", "label": "半日だけ予定がある", "em": "🕐" }
+      ]
+    },
+    {
+      "id": "wake", "base": true, "type": "single",
+      "title": "何時に起きる？",
+      "options": [
+        { "v": 6, "label": "6時台", "em": "🌄" },
+        { "v": 7, "label": "7時台", "em": "🌅" },
+        { "v": 8, "label": "8時台", "em": "☀️" },
+        { "v": 9, "label": "9時台", "em": "🌤️" },
+        { "v": 10, "label": "10時以降", "em": "😴" }
+      ]
+    },
+    {
+      "id": "depart", "type": "single",
+      "showIf": { "q": "day", "in": ["work", "school"] },
+      "title": "何時に家を出る？",
+      "options": [
+        { "v": 6, "label": "6時台", "em": "🚪", "disableIf": { "q": "wake", "gt": 6 }, "disabledNote": "起きる時間より前です" },
+        { "v": 7, "label": "7時台", "em": "🚪", "disableIf": { "q": "wake", "gt": 7 }, "disabledNote": "起きる時間より前です" },
+        { "v": 8, "label": "8時台", "em": "🚪", "disableIf": { "q": "wake", "gt": 8 }, "disabledNote": "起きる時間より前です" },
+        { "v": 9, "label": "9時以降", "em": "🚪" }
+      ]
+    },
+    {
+      "id": "ret", "type": "single",
+      "showIf": { "q": "day", "in": ["work", "school"] },
+      "title": "何時に帰る？",
+      "hint": "家に着く時間です",
+      "options": [
+        { "v": 17, "label": "17時台", "em": "🏠" },
+        { "v": 18, "label": "18時台", "em": "🏠" },
+        { "v": 19, "label": "19時台", "em": "🏠" },
+        { "v": 20, "label": "20時以降", "em": "🏠" }
+      ]
+    },
+    {
+      "id": "afterwork", "type": "single",
+      "showIf": { "q": "day", "in": ["work", "school"] },
+      "title": "帰ってからの元気は残っていそう？",
+      "options": [
+        { "v": "plenty", "label": "残っている", "em": "💪", "sub": "夜もしっかり動けます" },
+        { "v": "little", "label": "少しなら", "em": "🙂", "sub": "軽めの予定なら" },
+        { "v": "none", "label": "ほぼない", "em": "🫠", "sub": "夜はのんびり・早く寝る を優先します" }
+      ]
+    },
+    {
+      "id": "half", "type": "single",
+      "showIf": { "q": "day", "eq": "half" },
+      "title": "予定があるのは？",
+      "options": [
+        { "v": "am", "label": "午前", "em": "🌅", "sub": "だいたい 9時〜12時" },
+        { "v": "pm", "label": "午後", "em": "🌞", "sub": "だいたい 13時〜17時" },
+        { "v": "eve", "label": "夕方以降", "em": "🌆", "sub": "だいたい 18時半〜21時" }
+      ]
+    },
+    {
+      "id": "offstyle", "type": "single",
+      "showIf": { "q": "day", "eq": "off" },
+      "title": "明日の過ごし方のイメージは？",
+      "options": [
+        { "v": "packed", "label": "しっかり予定を詰めたい", "em": "🗓️" },
+        { "v": "moderate", "label": "ほどほどに", "em": "⚖️" },
+        { "v": "relaxed", "label": "ゆっくりしたい", "em": "🛋️" }
+      ]
+    },
+    {
+      "id": "wants", "base": true, "type": "multi", "max": 4, "presets": true,
+      "title": "明日やりたいことは？",
+      "hint": "4つまで選べます",
+      "options": [
+        { "v": "exercise", "label": "運動", "em": "🏃" },
+        { "v": "study", "label": "勉強・自己学習", "em": "📚" },
+        { "v": "shopping", "label": "買い物", "em": "🛍️" },
+        { "v": "chores", "label": "家事・掃除", "em": "🧹" },
+        { "v": "relax", "label": "のんびり休む", "em": "☕" },
+        { "v": "outing", "label": "おでかけ", "em": "🗺️" },
+        { "v": "social", "label": "友達・家族と過ごす", "em": "🤝" },
+        { "v": "hobby", "label": "趣味の時間", "em": "🎨" },
+        { "v": "gourmet", "label": "美味しいものを食べる", "em": "🍽️" },
+        { "v": "sleep", "label": "早く寝る", "em": "🌙" },
+        { "v": "custom", "label": "その他（自分で入力）", "em": "✏️" }
+      ]
+    },
+    {
+      "id": "custom", "type": "custom",
+      "showIf": { "q": "wants", "includes": "custom" },
+      "title": "「その他」のやりたいこと",
+      "hint": "3つまで追加できます",
+      "max": 3,
+      "maxLength": 20,
+      "placeholder": "例：美容院、車の洗車、レポートを書く",
+      "steps": {
+        "dur": {
+          "title": "かかる時間は？",
+          "options": [
+            { "v": 15, "label": "15分", "em": "⏱️" },
+            { "v": 30, "label": "30分", "em": "⏱️" },
+            { "v": 60, "label": "1時間", "em": "⏱️" },
+            { "v": 120, "label": "2時間", "em": "⏱️" },
+            { "v": 240, "label": "半日", "em": "⏱️", "sub": "4時間" }
+          ]
+        },
+        "when": {
+          "title": "いつやりたい？",
+          "options": [
+            { "v": "morning", "label": "朝", "em": "🌅" },
+            { "v": "day", "label": "昼", "em": "🌞" },
+            { "v": "evening", "label": "夕方", "em": "🌇" },
+            { "v": "night", "label": "夜", "em": "🌙" },
+            { "v": "any", "label": "いつでも", "em": "🔄" }
+          ]
+        },
+        "fixed": {
+          "title": "時間が決まっている？",
+          "options": [
+            { "v": "no", "label": "決まっていない", "em": "🆗" },
+            { "v": "yes", "label": "決まっている", "em": "📍", "sub": "次に開始時刻を選びます" }
+          ]
+        },
+        "start": { "title": "何時から？", "from": 360, "to": 1410, "step": 30 },
+        "place": {
+          "title": "外でやる？家でやる？",
+          "options": [
+            { "v": "outdoor", "label": "外", "em": "🚶" },
+            { "v": "indoor", "label": "家", "em": "🏠" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ex_type", "type": "single",
+      "showIf": { "q": "wants", "includes": "exercise" },
+      "title": "どんな運動をする？",
+      "options": [
+        { "v": "gym", "label": "ジム", "em": "🏋️" },
+        { "v": "run", "label": "ランニング・ウォーキング", "em": "👟" },
+        { "v": "yoga", "label": "ヨガ・ストレッチ", "em": "🧘" },
+        { "v": "sports", "label": "スポーツ（球技など）", "em": "⚽" },
+        { "v": "any", "label": "おまかせ", "em": "🎲" }
+      ]
+    },
+    {
+      "id": "ex_len", "type": "single",
+      "showIf": { "q": "ex_type", "eq": "gym" },
+      "title": "ジムはどれくらい？",
+      "options": [
+        { "v": 30, "label": "30分", "em": "⏱️" },
+        { "v": 60, "label": "1時間", "em": "⏱️" },
+        { "v": 90, "label": "1時間半以上", "em": "⏱️" }
+      ]
+    },
+    {
+      "id": "st_what", "type": "single",
+      "showIf": { "q": "wants", "includes": "study" },
+      "title": "何を勉強する？",
+      "options": [
+        { "v": "cert", "label": "資格の勉強", "em": "📝" },
+        { "v": "lang", "label": "語学", "em": "🗣️" },
+        { "v": "read", "label": "読書", "em": "📖" },
+        { "v": "prep", "label": "仕事・学校の予習", "em": "🗂️" },
+        { "v": "any", "label": "おまかせ", "em": "🎲" }
+      ]
+    },
+    {
+      "id": "st_len", "type": "single",
+      "showIf": { "q": "wants", "includes": "study" },
+      "title": "勉強はどれくらい？",
+      "options": [
+        { "v": 30, "label": "30分", "em": "⏱️" },
+        { "v": 60, "label": "1時間", "em": "⏱️" },
+        { "v": 120, "label": "2時間以上", "em": "⏱️" }
+      ]
+    },
+    {
+      "id": "shop_what", "type": "single",
+      "showIf": { "q": "wants", "includes": "shopping" },
+      "title": "何を買う？",
+      "options": [
+        { "v": "daily", "label": "日用品", "em": "🧻" },
+        { "v": "food", "label": "食材", "em": "🥕" },
+        { "v": "clothes", "label": "服・雑貨", "em": "👕" },
+        { "v": "online", "label": "ネットで済ませたい", "em": "📱", "sub": "家で15分だけ" }
+      ]
+    },
+    {
+      "id": "out_where", "type": "single",
+      "showIf": { "q": "wants", "includes": "outing" },
+      "title": "どこに行きたい？",
+      "options": [
+        { "v": "indoor", "label": "屋内", "em": "🎬", "sub": "カフェ、映画、ショッピング" },
+        { "v": "outdoor", "label": "屋外", "em": "🌳", "sub": "公園、散歩、観光" },
+        { "v": "any", "label": "おまかせ", "em": "🎲" }
+      ]
+    },
+    {
+      "id": "out_with", "type": "single",
+      "showIf": { "q": "wants", "includes": "outing" },
+      "title": "おでかけは だれと？",
+      "options": [
+        { "v": "solo", "label": "1人", "em": "🙋" },
+        { "v": "friends", "label": "友達・恋人", "em": "👫" },
+        { "v": "family", "label": "家族", "em": "👨‍👩‍👧" }
+      ]
+    },
+    {
+      "id": "social_what", "type": "single",
+      "showIf": { "q": "wants", "includes": "social" },
+      "title": "友達・家族と何をする？",
+      "options": [
+        { "v": "meal", "label": "ごはん", "em": "🍱" },
+        { "v": "play", "label": "遊びに行く", "em": "🎳" },
+        { "v": "home", "label": "家で過ごす", "em": "🏠" },
+        { "v": "call", "label": "電話・オンライン", "em": "📞" }
+      ]
+    },
+    {
+      "id": "food_kind", "type": "single",
+      "showIf": { "q": "wants", "includes": "gourmet" },
+      "title": "どんなものを食べたい？",
+      "options": [
+        { "v": "ramen", "label": "ラーメン・麺類", "em": "🍜" },
+        { "v": "washoku", "label": "和食", "em": "🍣" },
+        { "v": "yoshoku", "label": "洋食", "em": "🍝" },
+        { "v": "yakiniku", "label": "焼肉", "em": "🥩" },
+        { "v": "sweets", "label": "スイーツ・カフェ", "em": "🍰" },
+        { "v": "any", "label": "おまかせ", "em": "🎲" }
+      ]
+    },
+    {
+      "id": "food_when", "type": "single",
+      "showIf": { "q": "wants", "includes": "gourmet" },
+      "title": "いつ食べる？",
+      "options": [
+        { "v": "breakfast", "label": "朝", "em": "🌅" },
+        { "v": "lunch", "label": "昼", "em": "🌞" },
+        { "v": "dinner", "label": "夜", "em": "🌙" },
+        { "v": "snack", "label": "おやつ", "em": "🍪" }
+      ]
+    },
+    {
+      "id": "hobby_kind", "type": "single",
+      "showIf": { "q": "wants", "includes": "hobby" },
+      "title": "どんな趣味？",
+      "options": [
+        { "v": "game", "label": "ゲーム", "em": "🎮" },
+        { "v": "music", "label": "音楽・楽器", "em": "🎸" },
+        { "v": "video", "label": "動画・映画", "em": "🎬" },
+        { "v": "create", "label": "創作（絵・文章など）", "em": "✍️" },
+        { "v": "other", "label": "その他（自分で入力）", "em": "✏️" }
+      ]
+    },
+    {
+      "id": "hobby_text", "type": "text",
+      "showIf": { "q": "hobby_kind", "eq": "other" },
+      "title": "どんな趣味？",
+      "hint": "20文字まで",
+      "maxLength": 20,
+      "placeholder": "例：プラモデル、ガーデニング"
+    },
+    {
+      "id": "budget", "type": "single",
+      "showIf": {
+        "any": [
+          { "q": "wants", "includes": "outing" },
+          { "q": "wants", "includes": "gourmet" },
+          { "q": "social_what", "in": ["meal", "play"] },
+          { "q": "shop_what", "eq": "clothes" }
+        ]
+      },
+      "title": "使えるお金は？",
+      "hint": "おでかけ・食事・買い物に使う金額の目安です",
+      "options": [
+        { "v": 0, "label": "0円がいい", "em": "🆓" },
+        { "v": 1000, "label": "〜1,000円", "em": "🪙" },
+        { "v": 3000, "label": "〜3,000円", "em": "💴" },
+        { "v": 5000, "label": "〜5,000円", "em": "💴" },
+        { "v": 999999, "label": "それ以上でもOK", "em": "✨" }
+      ]
+    },
+    {
+      "id": "energy", "base": true, "type": "single",
+      "title": "明日の体力・気分は？",
+      "options": [
+        { "v": "genki", "label": "元気いっぱい", "em": "💪", "sub": "予定を多めに入れます" },
+        { "v": "normal", "label": "ふつう", "em": "🙂", "sub": "ほどよく入れます" },
+        { "v": "tired", "label": "ちょっと疲れ気味", "em": "😮‍💨", "sub": "休憩を多めにします" }
+      ]
+    },
+    {
+      "id": "bed", "base": true, "type": "single",
+      "title": "何時までに寝たい？",
+      "hint": "明日の夜に寝る時間です",
+      "options": [
+        { "v": 22, "label": "22時台", "em": "🌙" },
+        { "v": 23, "label": "23時台", "em": "🌙" },
+        { "v": 24, "label": "0時台", "em": "🌌" },
+        { "v": 25, "label": "1時以降", "em": "🦉" }
+      ]
+    }
+  ]
+}
