@@ -216,7 +216,7 @@
 
     // 5) 元気なら予定を多めに（ふつうは時間がかなり余ったときだけ1つ追加）
     const pool = wants.filter((w) => w !== 'sleep');
-    let extra = A.energy === 'genki' ? 2 : 0;
+    let extra = A.energy === 'genki' ? 3 : 0;
     if (A.energy === 'normal') {
       const freeTotal = freeIntervals(items, W, B).reduce((s, iv) => s + iv.end - iv.start, 0);
       if (freeTotal >= 180) extra = 1;

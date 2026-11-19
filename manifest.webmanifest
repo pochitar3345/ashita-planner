@@ -1,0 +1,16 @@
+{
+  "name": "あしたプランナー",
+  "short_name": "あした",
+  "description": "選ぶだけで明日の予定が決まる",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF7EE",
+  "theme_color": "#E8743B",
+  "lang": "ja",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icons/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
