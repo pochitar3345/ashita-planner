@@ -144,7 +144,7 @@ npm install
 npm test     # tests/unit.mjs（30項目）→ tests/e2e.mjs（Playwright・スマホサイズ 390×844・41項目）
 ```
 Chromium が入っていない場合は、PCの Microsoft Edge で実行します。
-最終実行：**unit 30/30、e2e 41/41 件OK**
+最終実行：**unit 30/30、e2e 41/41 件OK**（e2e は公開URLでも 41/41。スクリーンショットは公開URLでの実行時のもの。一度開いたあとオフラインにしても質問から結果まで動くことも確認）
 
 | # | 確認内容 | 結果 |
 |---|---|---|
